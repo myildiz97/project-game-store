@@ -17,3 +17,21 @@ export const getGames = async (where) => {
   }
   return games;
 };
+
+export const getGame = async (where) => {
+  let game;
+  try {
+    const result = await gameModel.find(where);
+
+    if (result) {
+      game = result;
+    } else {
+      throw new Error("Game was not fetched");
+    };
+
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+  return game;
+};
