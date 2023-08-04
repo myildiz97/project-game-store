@@ -17,7 +17,7 @@ router.get("/games", async (req, res) => {
   }
 });
 
-router.get("/games:id", async (req, res) => {
+router.get("/games/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const game = await getGame({ id });
