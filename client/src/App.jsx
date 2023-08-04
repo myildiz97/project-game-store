@@ -1,36 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
+import Games from "../components/Games";
+import Home from "../components/Home";
+import About from "../components/About";
+import GameDetails from "../components/GameDetails";
 
 const App = () => {
-  const [games, setGames] = useState([]);
-
-  console.log(games);
-
-  useEffect(() => {
-    axios.get("https://project-game.onrender.com/games")
-      .then((res) => setGames(res.data))
-      .catch((error) => console.error("Error fetching games:", error));
-  }, []);
-  
   return (
-    <div className="games">
-      {games.map((game) => {
-        const { id, title, imgUrl, categories } = game;
-        return (
-          <div key={id} className="game">
-            <img src={imgUrl} alt={title} />
-            <h3>{title}</h3>
-            <div>
-              <span>Categories: </span>
-              <span>{categories.join(", ")}</span>
-            </div>
-            {/* <Link to={`/games/${id}`}>See more details...</Link> */}
-            {id !== games.length && <hr />}
-          </div>
-        )
-        })}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="games" element={<Games />} />
+          <Route path="games/:id" element={<GameDetails />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
-export default App
+export default App;

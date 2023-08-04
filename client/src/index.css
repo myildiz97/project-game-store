@@ -1,0 +1,300 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #e07a5f;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+
+header {
+  width: 320px;
+  height: 120px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #81b29a;
+}
+
+.header-logo {
+  font-size: 1.5rem;
+  color: #fcca46;
+}
+
+header nav {
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Main */
+
+main {
+  width: 320px;
+  min-height: 100%;
+  padding: 30px 20px;
+  margin-top: 120px;
+  background-color: #eae2b7;
+}
+
+/* Home */
+
+.home h1 {
+  color: red;
+}
+
+.home hr {
+ width: 100%;
+ border: 1px solid red;
+ border-radius: 5px;
+}
+
+.home p {
+  text-align: start;
+  margin-bottom: 30px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+.home a {
+  color: #000;
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.home a:hover {
+  background-color: #118ab2;
+  border: none;
+  color: #fff;
+}
+
+/* About */
+
+.about {
+  width: 100%;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.about h2, .about p, .about div h3 {
+  text-align: start;
+}
+
+.about p {
+  letter-spacing: 1.1px;
+  font-weight: 400;
+}
+
+.about div {
+  background-color: #e07a5f;
+  padding: 20px;
+  display: grid;
+  place-content: center;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.about a {
+  background-color: #fff;
+  color: #000;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.about a:hover {
+  background-color: #118ab2;
+  border: none;
+  color: #fff;
+}
+
+/* Games */
+.games {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  text-align: start;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 6px;
+  width: 100%;
+  margin: 20px 0 10px 0;
+}
+
+.game a {
+  margin: 10px 0;
+  color: #023047;
+}
+
+.game a:hover {
+  color: #e76f51;
+}
+
+.game hr {
+  width: 100%;
+  border: 2px solid #118ab2;
+  border-radius: 5px;
+  margin-bottom: 0;
+}
+
+.game:first-of-type {
+  margin-top: 0;
+}
+
+.game:last-of-type {
+  margin-bottom: 0;
+}
+
+.game img {
+  width: 100%;
+}
+
+.game div {
+  font-size: 0.9rem;
+}
+
+.game div span:last-of-type {
+  color: #e76f51;
+}
+
+/* Game Details */
+
+.gameDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: start;
+}
+
+.gameDetails img {
+  width: 100%;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.desc p button {
+  border: none;
+  background: none;
+  margin: 0;
+  margin-left: 5px;
+  padding: 0;
+  color: #000;
+  font-weight: bold;
+  font-size: medium;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.developer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.developer span span, .categories span:first-of-type, .buy span span {
+  color: #e76f51;
+  font-weight: bold;
+}
+
+.categories {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.buy {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buy button {
+  border: none;
+  background: #fcca46;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: medium;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buy button:hover {
+  background: #81b29a;
+}
+
+/* Footer */
+
+footer {
+  width: 320px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #81b29a;
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer-links, .footer-links a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-links a {
+  justify-content: center;
+  gap: 5px;
+}
+
+.footer-links a:hover {
+  color: #000;
+}
