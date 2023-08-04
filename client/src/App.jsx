@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
-import Games from "./components/Games";
-import Home from "./components/Home";
-import About from "./components/About";
+import Games from "./pages/Games";
+import Home from "./pages/Home";
+import About from "./pages/About";
 import GameDetails from "./components/GameDetails";
 
 const App = () => {
