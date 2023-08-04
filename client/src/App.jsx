@@ -7,7 +7,7 @@ const App = () => {
   console.log(games);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/games")
+    axios.get("https://project-game.onrender.com/games")
       .then((res) => setGames(res.data))
       .catch((error) => console.error("Error fetching games:", error));
   }, []);
