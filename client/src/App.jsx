@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Games from "./pages/Games";
 import Home from "./pages/Home";
