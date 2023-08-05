@@ -191,6 +191,35 @@ main {
   margin: 10px 0 30px;
 }
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  padding: 20px;
+  width: 100%;
+  height: 70px;
+  border: 3px solid #d90429;
+  border-radius: 50px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.notFound {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-style: italic;
+  color: #d90429;
+}
+
 .game {
   display: flex;
   flex-direction: column;
@@ -479,6 +508,15 @@ footer {
     font-size: 2.6rem;
   }
 
+  .search-bar {
+    margin-bottom: 0;
+    width: 75%;
+  }
+
+  .notFound {
+    margin-top: 30px;
+  }
+
   header nav, .home h1, .about h2 {
     font-size: 2.3rem;
   }
@@ -526,7 +564,7 @@ footer {
     justify-content: space-between;
     margin: 0;
     padding: 10px;
-    background-color: whitesmoke;
+    background-color: cornsilk;
     border-radius: 10px;
   }
 }
@@ -543,6 +581,10 @@ footer {
 
   .games h1, .gameDetails h1 {
     font-size: 4rem;
+  }
+
+  .search-bar {
+    width: 60%;
   }
 
   header nav, .home h1, .about h2 {
@@ -580,6 +622,10 @@ footer {
   .games-wrapper {
     gap: 20px;
     grid-template: auto / repeat(4, 1fr);
+  }
+
+  .search-bar {
+    width: 50%;
   }
 
   .gameDetails img, .about img {
