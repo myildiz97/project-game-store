@@ -482,6 +482,11 @@ footer {
     font-size: 1.3rem;
   }
 
+  .buy {
+    justify-content: center;
+    gap: 30px;
+  }
+
   .games hr {
     display: none;
   }
