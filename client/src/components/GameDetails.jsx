@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { BsArrowLeftShort } from "react-icons/bs";
+import Loader from "../tools/Loader.jsx";
 
 const GameDetails = () => {
   const [game, setGame] = useState(null);
@@ -17,34 +19,41 @@ const GameDetails = () => {
 
   return (
     <div className="gameDetails">
-      <img src={game?.imgUrl} alt={game?.title} />
-      <div className="desc">
-        <h2>{game?.title}</h2>
-        <p>
-          {game?.description}
-          <button onClick={() => {
-            setSeeMore(prev => !prev);
-            seeMore ? setSeeMoreText("More...") : setSeeMoreText("Hide...");
-          }}>
-            {seeMoreText}
-          </button>
-        </p>
-      </div>
-      {seeMore && (
-        <div className="developer">
-          <span><span>Publisher: </span> {game?.publisher}</span>
-          <span><span>Developer: </span> {game?.developer}</span>
-          <span><span>Release Date: </span> {game?.releaseDate}</span>
-        </div>
+      <Link to="/games">
+        <BsArrowLeftShort />
+        <span>Back to all games</span>
+      </Link>
+      {game ? (
+        <>
+          <h1>{game?.title}</h1>
+          <hr />
+          <img src={game?.imgUrl} alt={game?.title} />
+          <p>{game?.description}</p>   
+          <div className="categories">
+            <span>Categories: </span>
+            <span>{game?.categories.join(", ")}</span>
+            <button onClick={() => {
+              setSeeMore(prev => !prev);
+              seeMore ? setSeeMoreText("More...") : setSeeMoreText("Hide...");
+            }}>
+              {seeMoreText}
+            </button>
+            {seeMore && (
+              <div className="developer">
+                <span><span>Publisher: </span> {game?.publisher}</span>
+                <span><span>Developer: </span> {game?.developer}</span>
+                <span><span>Release Date: </span> {game?.releaseDate}</span>
+              </div>
+            )}
+          </div>
+          <div className="buy">
+            <span><span>Price: </span> {game?.price}</span>
+            <button>Buy Now</button>
+          </div>
+        </>
+      ) : (
+        <Loader />
       )}
-      <div className="categories">
-        <span>Categories: </span>
-        <span>{game?.categories.join(", ")}</span>
-      </div>
-      <div className="buy">
-        <span><span>Price: </span> {game?.price}</span>
-        <button>Buy Now</button>
-      </div>
     </div>
   )
 }

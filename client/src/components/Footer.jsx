@@ -10,6 +10,7 @@ const Footer = () => {
         <a 
           href="https://www.linkedin.com/in/mehmetyildizz/"
           target="_blank"
+          rel="noreferrer"
         >
           <BiLogoLinkedin />
           <span>LinkedIn</span>
@@ -17,6 +18,7 @@ const Footer = () => {
         <a 
           href="https://github.com/myildiz97"
           target="_blank"
+          rel="noreferrer"
         >
           <BiLogoGithub />
           <span>GitHub</span>

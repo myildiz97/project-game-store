@@ -4,13 +4,13 @@ const Header = () => {
   const activeStyleAbout = {
     textDecoration: "underline",
     color: "#118ab2",
-    fontSize: "1.25rem"
+    fontSize: "1.25em"
   };
 
   const activeStyleGames = {
     textDecoration: "underline",
     color: "#ef476f",
-    fontSize: "1.25rem"
+    fontSize: "1.25em"
   };
 
   return (
