@@ -9,7 +9,7 @@ const Header = () => {
 
   const activeStyleGames = {
     textDecoration: "underline",
-    color: "#ef476f",
+    color: "#003049",
     fontSize: "1.25em"
   };
 

@@ -6,7 +6,7 @@ html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #e07a5f;
+  background-color: #2b2d42;
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -45,12 +45,12 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: #81b29a;
+  background-color: #d90429;
+  color: #edf2f4;
 }
 
 .header-logo {
   font-size: 1.5rem;
-  color: #fcca46;
 }
 
 header nav {
@@ -66,7 +66,7 @@ header nav a:first-of-type:hover {
 }
 
 header nav a:last-of-type:hover {
-  color: #e76f51;
+  color: #003049;
 }
 
 a {
@@ -83,7 +83,7 @@ main {
   min-height: 100%;
   padding: 30px 20px;
   margin-top: 120px;
-  background-color: #eae2b7;
+  background-color: #edf2f4;
   display: grid;
   place-content: center;
   flex-grow: 1;
@@ -92,12 +92,12 @@ main {
 /* Home */
 
 .home h1 {
-  color: red;
+  color: #d90429;
 }
 
 .home hr {
  width: 100%;
- border: 1px solid red;
+ border: 3px solid #d90429;
  border-radius: 5px;
 }
 
@@ -110,7 +110,7 @@ main {
 
 .home a {
   color: #000;
-  border: 3px solid black;
+  border: 3px solid #000;
   border-radius: 8px;
   padding: 10px;
 }
@@ -147,7 +147,7 @@ main {
 }
 
 .about div {
-  background-color: #e07a5f;
+  background-color: #d90429;
   padding: 20px;
   display: grid;
   place-content: center;
@@ -178,7 +178,7 @@ main {
 }
 
 .games h1, .gameDetails h1 {
-  background: linear-gradient(to right, #ff6600, #ff0000);
+  background: linear-gradient(to right, #ef233c, #bf0603, #8d0801);
   -webkit-background-clip: text;
   color: transparent;
   display: inline-block;
@@ -186,7 +186,8 @@ main {
 
 .games hr, .gameDetails hr {
   width: 100%;
-  border: 2px solid #ff6600;
+  border: 3px solid #d90429;
+  border-radius: 5px;
   margin: 10px 0 30px;
 }
 
@@ -201,11 +202,11 @@ main {
 
 .game a {
   margin: 10px 0;
-  color: #023047;
+  color: #003049;
 }
 
 .game a:hover {
-  color: #e76f51;
+  color: #d90429;
 }
 
 .game hr {
@@ -232,7 +233,7 @@ main {
 }
 
 .game div span:last-of-type {
-  color: #e76f51;
+  color: #d90429;
 }
 
 /* Game Details */
@@ -293,8 +294,8 @@ main {
   margin-top: 5px;
 }
 
-.developer span span, .categories span:first-of-type, .buy span span {
-  color: #e76f51;
+.devs, .ctg, .buy span span {
+  color: #d90429;
   font-weight: bold;
 }
 
@@ -317,7 +318,7 @@ main {
 }
 
 .buy button:hover {
-  background: #81b29a;
+  background: #118ab2;
 }
 
 /* Footer */
@@ -331,7 +332,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #81b29a;
+  background-color: #d90429;
   color: #fff;
   font-weight: bold;
 }
@@ -349,7 +350,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #000;
+  color: #118ab2;
 }
 
 /* Loader */
@@ -495,12 +496,16 @@ footer {
     font-size: 1.3rem;
   }
 
+  .gameDetails img, .about img {
+    width: 80%;
+  }
+
   .buy {
     justify-content: center;
     gap: 30px;
   }
 
-  .games hr {
+  .game hr {
     display: none;
   }
 
@@ -557,6 +562,10 @@ footer {
     font-size: 1.8rem;
   }
 
+  .gameDetails img, .about img {
+    width: 60%;
+  }
+
   .games-wrapper {
     gap: 20px;
     grid-template: auto / repeat(3, 1fr);
@@ -571,6 +580,10 @@ footer {
   .games-wrapper {
     gap: 20px;
     grid-template: auto / repeat(4, 1fr);
+  }
+
+  .gameDetails img, .about img {
+    width: 50%;
   }
 }
 

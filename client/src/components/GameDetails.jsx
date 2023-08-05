@@ -30,7 +30,7 @@ const GameDetails = () => {
           <img src={game?.imgUrl} alt={game?.title} />
           <p>{game?.description}</p>   
           <div className="categories">
-            <span>Categories: </span>
+            <span className="ctg">Categories: </span>
             <span>{game?.categories.join(", ")}</span>
             <button onClick={() => {
               setSeeMore(prev => !prev);
@@ -40,9 +40,9 @@ const GameDetails = () => {
             </button>
             {seeMore && (
               <div className="developer">
-                <span><span>Publisher: </span> {game?.publisher}</span>
-                <span><span>Developer: </span> {game?.developer}</span>
-                <span><span>Release Date: </span> {game?.releaseDate}</span>
+                <span><span className="devs">Publisher: </span> {game?.publisher}</span>
+                <span><span className="devs">Developer: </span> {game?.developer}</span>
+                <span><span className="devs">Release Date: </span> {game?.releaseDate}</span>
               </div>
             )}
           </div>
