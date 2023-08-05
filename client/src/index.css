@@ -457,7 +457,7 @@ footer {
     font-size: 3rem;
   }
 
-  .about, .home, .games {
+  .about, .home, .games, .gameDetails {
     padding: 10px 30px;
   }
 
@@ -518,7 +518,7 @@ footer {
     margin-top: 200px;
   }
 
-  .about, .home, .games {
+  .about, .home, .games, .gameDetails {
     padding: 20px 60px;
   }
 
