@@ -4,10 +4,12 @@ import Games from "./pages/Games";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import GameDetails from "./components/GameDetails";
+import ScrollToTop from "./tools/ScrollToTop";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
