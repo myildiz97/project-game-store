@@ -10,6 +10,7 @@ const SearchBar = () => {
 
   const handleChange = (e) => {
     e.preventDefault();
+    setNotFound(false);
     let value = e.target.value.toLowerCase();
     setSearch(value);
     if (value.length > 0) {
