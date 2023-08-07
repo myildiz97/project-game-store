@@ -27,6 +27,7 @@ const Games = () => {
 
   useEffect(() => {
     let url = "https://project-game.onrender.com/games";
+    // let url = "http://localhost:5000/games";
     if (categories) url += `?categories=${categories}`;
     getGames(url);
   }, [searchParams]);

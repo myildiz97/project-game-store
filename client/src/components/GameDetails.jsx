@@ -17,6 +17,7 @@ const GameDetails = () => {
 
   useEffect(() => {
     axios.get(`https://project-game.onrender.com/games/${id}`)
+    // axios.get(`http://localhost:5000/games/${id}`)
       .then((res) => setGame(res.data[0]))
       .catch((error) => console.error("Error fetching game:", error));
   }, [id]);
@@ -39,12 +40,6 @@ const GameDetails = () => {
           <div className="categories">
             <span className="ctg">Categories: </span>
             <span>{game?.categories.join(", ")}</span>
-            <button onClick={() => {
-              setSeeMore(prev => !prev);
-              seeMore ? setSeeMoreText("More...") : setSeeMoreText("Hide...");
-            }}>
-              {seeMoreText}
-            </button>
             {seeMore && (
               <div className="developer">
                 <span><span className="devs">Publisher: </span> {game?.publisher}</span>
@@ -52,6 +47,16 @@ const GameDetails = () => {
                 <span><span className="devs">Release Date: </span> {game?.releaseDate}</span>
               </div>
             )}
+            <button 
+              onClick={() => {
+                setSeeMore(prev => !prev);
+                seeMore ? setSeeMoreText("More...") : setSeeMoreText("Hide...");
+              }}
+              style={seeMore ? { marginLeft: "0px" } : {}}
+            >
+             {seeMoreText}
+            </button>
+            
           </div>
           <div className="buy">
             <span><span>Price: </span> {game?.price}</span>

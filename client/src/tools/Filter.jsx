@@ -40,18 +40,20 @@ const Filter = () => {
       <div className="filter-btns">
         {categoriesArr.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' })).map((category, index) => {
           return (
-            <NavLink
-              key={index}
+            <div className="filter-btn" key={index}>
+              <span>{index !== 0 && "|"}</span>
+              <NavLink
               to={{
                 pathname: "/games",
                 search: `?categories=${category}`,
               }}
               onClick={() => handleClick(category)}
               style={ active === category ? activeStyle : null}
-            >
-              {category === "Open+World" ? "Open World" : category}
-            </NavLink>
-          )
+              >
+                {category === "Open+World" ? "Open World" : category}
+              </NavLink>
+            </div>
+          );
         })}
       </div>
     {clearFilter && 
