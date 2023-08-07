@@ -12,6 +12,7 @@ const mongoDbUri = process.env.MONGODB_URI;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(mongoDbUri, {
   useNewUrlParser: true,

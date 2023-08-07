@@ -1,5 +1,5 @@
 import express from "express";
-import { getGames, getGame } from "../api/games.js";
+import { getGames, getGame, getUsers, getUser } from "../api/games.js";
 
 const router = express.Router();
 
@@ -34,6 +34,32 @@ router.get("/games/:id", async (req, res) => {
     console.error("Error retrieving game:", error);
     res.status(500).json({ error: "An error occurred" });
   }
+});
+
+router.get("/login", async (req, res) => {
+  try {
+    const users = await getUsers({});
+    
+    if (users) res.json(users); 
+
+  } catch (error) {
+    console.error("Error retrieving users:", error);
+    res.status(500).json({ error: "An error occurred" });
+  }
+});
+
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await getUser({ email, password });
+
+    user.length > 0 ? res.json(user) : res.json({ message: "ERROR TAKEN"});
+
+  } catch (error) {
+    console.error("Error retrieving user:", error);
+    res.status(500).json({ error: "An error occurred" });
+  }
+
 });
 
 export default router;

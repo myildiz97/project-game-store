@@ -30,6 +30,13 @@ const Header = () => {
         >
           Games
         </NavLink>
+
+        <NavLink
+          to="/login"
+          style={({isActive}) => isActive ? activeStyleGames : null}
+        >
+          Login
+        </NavLink>
       </nav>
     </header>
   )

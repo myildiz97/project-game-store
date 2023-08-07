@@ -458,6 +458,8 @@ footer {
   100% { transform: rotate(360deg); }
 }
 
+/* Media Queries */
+
 @media(min-width: 550px) {
   header {
     height: 100px;
@@ -633,7 +635,7 @@ footer {
     justify-content: space-between;
     margin: 0;
     padding: 10px;
-    background-color: cornsilk;
+    background-color: floralwhite;
     border-radius: 10px;
   }
 }
