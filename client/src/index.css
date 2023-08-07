@@ -319,8 +319,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  gap: 10px;
+  justify-content: center;
   text-align: start;
 }
 
@@ -331,15 +330,21 @@ main {
   color: #000;
   font-style: italic;
   margin-right: auto;
+  margin-bottom: 20px;
   text-decoration: underline;
-  margin-bottom: 5px;
 }
 
-.gameDetails hr {
-  margin-bottom: 10px;
+.game-detail-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 0 auto;
 }
 
-.gameDetails img {
+.game-detail-wrapper img {
   width: 100%;
 }
 
@@ -714,6 +719,17 @@ footer {
 @media(min-width: 1400px) {
   .game {
     padding: 20px;
+  }
+
+  .game-detail-wrapper {
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .game-detail-wrapper img {
+    align-self: center;
   }
 
   .search-bar {

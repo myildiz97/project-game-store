@@ -35,32 +35,36 @@ const GameDetails = () => {
         <>
           <h1>{game?.title}</h1>
           <hr />
-          <img src={game?.imgUrl} alt={game?.title} />
-          <p>{game?.description}</p>   
-          <div className="categories">
-            <span className="ctg">Categories: </span>
-            <span>{game?.categories.join(", ")}</span>
-            {seeMore && (
-              <div className="developer">
-                <span><span className="devs">Publisher: </span> {game?.publisher}</span>
-                <span><span className="devs">Developer: </span> {game?.developer}</span>
-                <span><span className="devs">Release Date: </span> {game?.releaseDate}</span>
+          <div className="game-detail-wrapper">
+            <img src={game?.imgUrl} alt={game?.title} />
+            <div className="game-detail-noimg">
+              <p>{game?.description}</p>   
+              <div className="categories">
+                <span className="ctg">Categories: </span>
+                <span>{game?.categories.join(", ")}</span>
+                {seeMore && (
+                  <div className="developer">
+                    <span><span className="devs">Publisher: </span> {game?.publisher}</span>
+                    <span><span className="devs">Developer: </span> {game?.developer}</span>
+                    <span><span className="devs">Release Date: </span> {game?.releaseDate}</span>
+                  </div>
+                )}
+                <button 
+                  onClick={() => {
+                    setSeeMore(prev => !prev);
+                    seeMore ? setSeeMoreText("More...") : setSeeMoreText("Hide...");
+                  }}
+                  style={seeMore ? { marginLeft: "0px" } : {}}
+                  >
+                {seeMoreText}
+                </button>
+                
               </div>
-            )}
-            <button 
-              onClick={() => {
-                setSeeMore(prev => !prev);
-                seeMore ? setSeeMoreText("More...") : setSeeMoreText("Hide...");
-              }}
-              style={seeMore ? { marginLeft: "0px" } : {}}
-            >
-             {seeMoreText}
-            </button>
-            
-          </div>
-          <div className="buy">
-            <span><span>Price: </span> {game?.price}</span>
-            <button>Buy Now</button>
+              <div className="buy">
+                <span><span>Price: </span> {game?.price}</span>
+                <button>Buy Now</button>
+              </div>
+            </div>
           </div>
         </>
       ) : (
