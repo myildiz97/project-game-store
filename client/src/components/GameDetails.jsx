@@ -28,7 +28,7 @@ const GameDetails = () => {
         relative="path"
       >
         <BsArrowLeftShort />
-        <span>Back to {category} games</span>
+        <span>Back to {category === "Open+World" ? "Open World" : category} games</span>
       </Link>
       {game ? (
         <>
