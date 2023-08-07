@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { BsArrowLeftShort } from "react-icons/bs";
 import Loader from "../tools/Loader.jsx";
 
@@ -10,6 +10,10 @@ const GameDetails = () => {
   const [seeMoreText, setSeeMoreText] = useState("More...");
 
   const { id } = useParams();
+  const location = useLocation();
+
+  const search = location.state?.search || "";
+  const category = location.state?.category || "all";
 
   useEffect(() => {
     axios.get(`https://project-game.onrender.com/games/${id}`)
@@ -19,9 +23,12 @@ const GameDetails = () => {
 
   return (
     <div className="gameDetails">
-      <Link to="/games">
+      <Link 
+        to={`..${search}`}
+        relative="path"
+      >
         <BsArrowLeftShort />
-        <span>Back to all games</span>
+        <span>Back to {category} games</span>
       </Link>
       {game ? (
         <>
@@ -55,7 +62,7 @@ const GameDetails = () => {
         <Loader />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default GameDetails
+export default GameDetails;
