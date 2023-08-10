@@ -67,7 +67,7 @@ header nav a:first-of-type:hover {
   color: #118ab2;
 }
 
-header nav a:last-of-type:hover {
+header nav a:not(:nth-child(1)):hover {
   color: #003049;
 }
 
@@ -401,6 +401,44 @@ main {
 
 .buy button:hover {
   background: #118ab2;
+}
+
+.login {
+  min-height: calc(100vh - 240px);
+  border: 1px solid red;
+  display: grid;
+  place-content: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.login-form, .login-inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.login-inputs input {
+  width: 100%;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.login-form button {
+  width: 60%;
+  border: none;
+  background-color: #118ab2;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+.login-form button:hover {
+  opacity: 0.8;
 }
 
 /* Footer */

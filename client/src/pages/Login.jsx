@@ -14,10 +14,10 @@ const Login = () => {
     const data = { email, password };
 
     try {
-      const response = await axios.post("http://localhost:5000/login", data);
+      const response = await axios.post("https://project-game.onrender.com/login", data);
       const { message } = response.data;
       if (!message) {
-        console.log(response.data[0]);
+        // console.log(response.data[0]);
         navigate("/");
       } else {
         throw new Error("Wrong user");
@@ -35,28 +35,28 @@ const Login = () => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+    <div className="login">
+      <form onSubmit={handleSubmit} className="login-form">
+        <div className="login-inputs">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-        <br />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-        <br />
+        </div>
         <button type="submit">Login</button>
       </form>
       {wrong && <p>Wrong credentials</p>}
-    </>
+    </div>
   );
 };
 
